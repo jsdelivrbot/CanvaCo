@@ -7,14 +7,14 @@ var express = require('express'),
   io = require('socket.io').listen(server);
 
 
-/*http.listen(process.env.PORT || 8080, function() {
+http.listen(process.env.PORT || 8080, function() {
   console.log('listening on', http.address().port);
-});*/
-
+});
+/*
 var listeningPort = 8080;
 server.listen(listeningPort);
 console.log("listening on port: " + listeningPort);
-
+*/
 /* old routing
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');

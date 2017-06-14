@@ -6,10 +6,12 @@ var express = require('express'),
   server = http.createServer(app),
   io = require('socket.io').listen(server);
 
-
-http.listen(process.env.PORT || 8080, function() {
+var port = process.env.PORT || 8080;
+server.listen(port);
+console.log("listening on port: " + port);
+/*http.listen(process.env.PORT || 8080, function() {
   console.log('listening on', http.address().port);
-});
+});*/
 /*
 var listeningPort = 8080;
 server.listen(listeningPort);

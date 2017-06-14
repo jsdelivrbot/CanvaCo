@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:' + process.env.PORT);
+var socket;
 var canvas;
 
 
@@ -6,6 +6,7 @@ function setup() {
   canvas = createCanvas(1000, 550);
   canvas.position(0, 0);
   background(25);
+  //socket = io.connect('http://localhost:8080');
   //socket.on('mouse', newDrawing);*/
 
   socket.on('mouse', function(data) {

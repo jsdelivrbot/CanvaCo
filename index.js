@@ -6,14 +6,14 @@ var express = require('express'),
   server = http.createServer(app),
   io = require('socket.io').listen(server);
 
-var port = process.env.PORT || 8080;
-server.listen(port);
-console.log("listening on port: " + port);
-/*http.listen(process.env.PORT || 8080, function() {
+var listeningPort = process.env.PORT || 8080;
+server.listen(listeningPort);
+console.log("listening on port: " + listeningPort);
+
+/*http.listen(process.env.PORT || 3000, function() {
   console.log('listening on', http.address().port);
 });*/
-/*
-var listeningPort = 8080;
+/*var listeningPort = 8080;
 server.listen(listeningPort);
 console.log("listening on port: " + listeningPort);
 */
@@ -31,6 +31,8 @@ var usernames = {};
 var rooms = ['room1', 'room2', 'room3'];
 
 io.sockets.on('connection', function(socket) {
+  //when user connects, send the port
+  socket.emit('portNumber', listeningPort);
   // when the client emits 'adduser', this listens and executes
   socket.on('adduser', function(username) {
     // store the username in the socket session for this client

@@ -7,7 +7,14 @@ var express = require('express'),
   io = require('socket.io').listen(server);
 
 var listeningPort = process.env.PORT || 8080;
-server.listen(listeningPort);
+
+
+server.listen(8080, '0.0.0.0', function() {
+  console.log('Listening to port:  ' + 8080);
+});
+
+
+//server.listen(listeningPort);
 //writing the port number to TXT porting to the directory that this file is in then public/assets/port.txt
 fs.writeFile(__dirname + '/public/assets/port.txt', listeningPort, function(err) {
   if (err) return console.log(err);

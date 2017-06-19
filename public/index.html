@@ -15,16 +15,10 @@
   <script>
     //function to retrieve the port number from the txt file
 
-    jQuery.get('assets/port/port.txt', function(data) {
-      logPort(data);
-    });
-
-    function logPort(thedata) {
-      xyz = thedata;
-    }
 
 
-    socket = io.connect('http://localhost:' + xyz);
+    socket = new io.Socket();
+    //socket = io.connect('http://localhost:8080');
     // on connection to server, ask for user's name with an anonymous callback
     socket.on('connect', function() {
       // call the server-side function 'adduser' and send one parameter (value of prompt)

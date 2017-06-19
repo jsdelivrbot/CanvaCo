@@ -14,8 +14,17 @@
 
   <script>
     //function to retrieve the port number from the txt file
-    var listeningPort = process.env.PORT;
-    socket = io.connect('http://localhost:' + listeningPort);
+
+    jQuery.get('assets/port/port.txt', function(data) {
+      logPort(data);
+    });
+
+    function logPort(thedata) {
+      xyz = thedata;
+    }
+
+
+    socket = io.connect('http://localhost:' + xyz);
     // on connection to server, ask for user's name with an anonymous callback
     socket.on('connect', function() {
       // call the server-side function 'adduser' and send one parameter (value of prompt)

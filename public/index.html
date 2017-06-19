@@ -11,23 +11,21 @@
   <script src="/libraries/p5.sound.js" type="text/javascript"></script>
   <script src="/sketch.js" type="text/javascript"></script>
   <link rel="stylesheet" href="/style.css">
-  <script>
-    var port;
-    socket.on('portNumber', function(recievedPort) {
-      port = recievedPort;
-    });
-    var socket = io.connect('http://localhost:' + port);
 
+  <script>
+    //function to retrieve the port number from the txt file
+    var listeningPort = process.env.PORT;
+    socket = io.connect('http://localhost:' + listeningPort);
     // on connection to server, ask for user's name with an anonymous callback
     socket.on('connect', function() {
       // call the server-side function 'adduser' and send one parameter (value of prompt)
       var usersName = prompt("What's your name?");
       // if the users name is not valid, promp again to enter name until valid name is entered
-      while (usersName == "" || usersName == null || usersName == " ") {
+      while (usersName == "" || usersName == null || usersName == " " || usersName == undefined) {
         usersName = prompt("Please enter a valid username");
       }
       // if a valid name is entered, proceed to hte game and enter it to the list
-      if (usersName != "" || usersName != null || usersName != " ") {
+      if (usersName != "" || usersName != null || usersName != " " || usersName == undefined) {
         socket.emit('adduser', usersName);
       }
     });
@@ -84,7 +82,8 @@
 </head>
 
 <body>
-
+  <!-- NOTE: test if routing works
+  <img src="/assets/mclaren.jpg" alt="mclaren">-->
   <div class="canvasHolder">
   </div>
   <div class="chatModule">

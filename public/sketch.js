@@ -3,6 +3,7 @@ var canvas;
 
 
 function setup() {
+  console.log(socket);
   canvas = createCanvas(1000, 550);
   canvas.position(0, 0);
   background(25);

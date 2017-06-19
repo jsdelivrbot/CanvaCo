@@ -1,5 +1,5 @@
 var usernamelist = [];
-
+var fs = require('fs');
 var express = require('express'),
   app = express(),
   http = require('http'),
@@ -8,6 +8,18 @@ var express = require('express'),
 
 var listeningPort = process.env.PORT || 8080;
 server.listen(listeningPort);
+//writing the port number to TXT porting to the directory that this file is in then public/assets/port.txt
+fs.writeFile(__dirname + '/public/assets/port.txt', listeningPort, function(err) {
+  if (err) return console.log(err);
+  console.log(listeningPort + " the port number was written to port.txt");
+});
+var portData = fs.readFileSync('portNumber.json');
+var writtenPorts = JSON.parse(portData);
+console.log(writtenPorts);
+
+function finished(err) {
+  console.log('all set.');
+}
 console.log("listening on port: " + listeningPort);
 
 /*http.listen(process.env.PORT || 3000, function() {
@@ -31,8 +43,6 @@ var usernames = {};
 var rooms = ['room1', 'room2', 'room3'];
 
 io.sockets.on('connection', function(socket) {
-  //when user connects, send the port
-  socket.emit('portNumber', listeningPort);
   // when the client emits 'adduser', this listens and executes
   socket.on('adduser', function(username) {
     // store the username in the socket session for this client

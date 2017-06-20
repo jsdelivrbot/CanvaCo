@@ -7,15 +7,17 @@ var canvG = 0;
 var bruR = 0;
 var bruG = 0;
 var bruB = 0;
-var song;
+var song_nootstorm;
+var song_guccimane;
+var song_oof;
 
 function preload() {
-  song = loadSound("/assets/moneymachine.mp3");
+  song_nootstorm = loadSound("assets/nootstorm.mp3");
+  song_guccimane = loadSound("assets/moneymachine.mp3");
+  song_oof = loadSound("assets/Oof.mp3");
 }
 
 function setup() {
-  song.play();
-
   console.log(socket);
   canvas = createCanvas(1000, 550);
   canvas.position(0, 0);
@@ -59,9 +61,7 @@ function setup() {
   blueBSlider.position(1100, 230);
 }
 
-function draw() {
-
-}
+function draw() {}
 
 var brFill = 255;
 var bgFill = 0;
@@ -111,4 +111,36 @@ function sendmouse(xpos, ypos, cr, cg, cb, br, bg, bb) {
 
   //send data to the socket
   socket.emit('mouse', data);
+}
+
+function mouseClicked() {
+  song_guccimane.stop();
+  song_nootstorm.stop();
+  song_oof.stop();
+  if (mouseX > 1000 && mouseY > 293 && mouseY < 318 && mouseX < 1103) {
+    console.log(document.getElementById("songmenu").value);
+    song_guccimane.stop();
+    song_nootstorm.stop();
+    song_oof.stop();
+    if (document.getElementById("songmenu").value == 0) {
+      song_guccimane.stop();
+      song_nootstorm.stop();
+      song_oof.stop();
+    }
+    if (document.getElementById("songmenu").value == 1) {
+      song_nootstorm.play();
+      song_guccimane.stop();
+      song_oof.stop();
+    }
+    if (document.getElementById("songmenu").value == 2) {
+      song_nootstorm.stop();
+      song_guccimane.play();
+      song_oof.stop();
+    }
+    if (document.getElementById("songmenu").value == 3) {
+      song_nootstorm.stop();
+      song_guccimane.stop();
+      song_oof.play();
+    }
+  }
 }

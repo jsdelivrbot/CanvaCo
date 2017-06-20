@@ -10,11 +10,15 @@
 }
 
 .chatModule {
-  margin-top: 300px;
+  margin-top: 250px;
 }
 
 .sliderlabels {
   margin-left: 1000px;
   line-height: 30px;
   margin-top: 20px;
+}
+
+.songModule {
+  margin-left: 1000px;
 }

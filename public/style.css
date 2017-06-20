@@ -10,5 +10,11 @@
 }
 
 .chatModule {
-  margin-top: 550px;
+  margin-top: 300px;
+}
+
+.sliderlabels {
+  margin-left: 1000px;
+  line-height: 30px;
+  margin-top: 20px;
 }

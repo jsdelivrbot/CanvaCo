@@ -84,8 +84,9 @@ io.sockets.on('connection', function(socket) {
     socket.on('mouse',
       function(data) {
         //data coes in
-        console.log("recieved: 'mouse ' " + data.x + " " + data.y);
-
+        if (data.x < 1001 && data.y < 550) {
+          console.log("recieved: 'mouse ' " + data.x + " " + data.y);
+        }
         //send the data to all other clients
         socket.broadcast.emit('mouse', data);
       });

@@ -1,6 +1,6 @@
 <h1 align="center">
 	<span style="width: 50%;">
-		<img alt="logo" src="https://static1.squarespace.com/static/58da61243a0411e118c534d9/58f1259ef7e0abff4dd2a2a1/58f1f30e8419c24fe6ace437/1492251410462/CC+Logo.png" style="display: inline-block; float: left;" width=56px>
+		<img alt="logo" src="https://www.google.ca/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwj2naSYl8PYAhXCsVQKHRfaBhwQjRwIBw&url=https%3A%2F%2Femojiisland.com%2Fproducts%2Fmonkey-face-emoji-icon&psig=AOvVaw2MsvfEVI_RvT-5m1x51CO1&ust=1515322713232115" style="display: inline-block; float: left;" width=30px>
 		<span>CanvaCo</span>
 	</span>
 </h1>

@@ -1,6 +1,5 @@
 <h1 align="center">
 	<span style="width: 50%;">
-		<img src="http://cdn.shopify.com/s/files/1/1061/1924/products/Monkey_Face_Emoji_grande.png?v=1480481036" style="display: inline-block; float: left;" width=30px>
 		<span>CanvaCo</span>
 	</span>
 </h1>

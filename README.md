@@ -1,6 +1,6 @@
 <h1 align="center">
 	<span style="width: 50%;">
-		<img alt="logo" src="https://static1.squarespace.com/static/58da61243a0411e118c534d9/58f1259ef7e0abff4dd2a2a1/58f1f30e8419c24fe6ace437/1492251410462/CC+Logo.png" style="display: inline-block; float: left;" width=24px>
+		<img alt="logo" src="https://static1.squarespace.com/static/58da61243a0411e118c534d9/58f1259ef7e0abff4dd2a2a1/58f1f30e8419c24fe6ace437/1492251410462/CC+Logo.png" style="display: inline-block; float: left;" width=56px>
 		<span>CanvaCo</span>
 	</span>
 </h1>

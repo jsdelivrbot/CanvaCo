@@ -4,6 +4,7 @@
 	</span>
 </h1>
 
+Computer Science Grade 11 Final Project.
 CanvaCo is a nodejs application which uses websockets and express to collaboratively draw on an HTML canvas.
 
 ## Getting Started
